@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Nissan.Web.CAS</id>
+    <id>test_app</id>
     <version>1.0.0</version>
     <authors>DT</authors>
     <owners>DT</owners>
