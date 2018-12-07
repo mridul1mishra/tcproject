@@ -37,7 +37,7 @@ MKDIR .\_Deployment\Output\CDS
 "C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" /m /t:Rebuild "test_app.sln" /p:Configuration=%1;ContentAuthoringOutputDir=%~dp0\_Deployment\Output\CAS;ContentDeliveryOutputDir=%~dp0\_Deployment\Output\CDS
 IF ERRORLEVEL 1 GOTO errorHandling
 
-.\packages\nuget\nuget.exe pack ".\Reactive.Nissan.Web\Nissan.Web.CAS.nuspec" -Version %2 -Verbosity detailed -BasePath .\_Deployment\Output\CAS\ -OutputDirectory .\_Deployment\Packages
+.\packages\nuget\nuget.exe pack ".\Nissan.Web.CAS.nuspec" -Version %2 -Verbosity detailed -BasePath .\_Deployment\Output\CAS\ -OutputDirectory .\_Deployment\Packages
 IF ERRORLEVEL 1 GOTO errorHandling
 
 .\packages\nuget\nuget.exe pack ".\Reactive.Nissan.Web\Nissan.Web.CDS.nuspec" -Version %2 -Verbosity detailed -BasePath .\_Deployment\Output\CDS\ -OutputDirectory .\_Deployment\Packages
