@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>test_app</id>
+    <version>1.0.0</version>
+    <authors>DT</authors>
+    <owners>DT</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Nissan CAS</description>
+    <copyright>Copyright 2016</copyright>
+  </metadata>
+  <files>
+    <file src="**/*.*" />
+  </files>
+</package>
