@@ -40,30 +40,6 @@ IF ERRORLEVEL 1 GOTO errorHandling
 .\packages\nuget\nuget.exe pack ".\Reactive.Nissan.Web\Nissan.Web.CAS.nuspec" -Version %2 -Verbosity detailed -BasePath .\_Deployment\Output\CAS\ -OutputDirectory .\_Deployment\Packages
 IF ERRORLEVEL 1 GOTO errorHandling
 
-.\packages\nuget\nuget.exe pack ".\Reactive.Nissan.Web\Nissan.Web.CDS.nuspec" -Version %2 -Verbosity detailed -BasePath .\_Deployment\Output\CDS\ -OutputDirectory .\_Deployment\Packages
-IF ERRORLEVEL 1 GOTO errorHandling
-
-REM CREATE NISSAN.ASSETS NUPKG ARTIFACT
-.\packages\nuget\nuget.exe pack ".\Reactive.Nissan.Content\Nissan.Assets.nuspec" -Version %2 -Verbosity detailed -BasePath .\Reactive.Nissan.Content\Nissan-Assets -OutputDirectory .\_Deployment\Packages
-IF ERRORLEVEL 1 GOTO errorHandling
-
-REM CREATE TDS UPDATE PACKAGES
-"C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" /t:Build ".\Reactive.Nissan.Content\Nissan.TDS.01.Core\Nissan.TDS.01.Core.scproj" /p:Configuration=%1
-IF ERRORLEVEL 1 GOTO errorHandling
-
-"C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" /t:Build ".\Reactive.Nissan.Content\Nissan.TDS.02.Master\Nissan.TDS.02.Master.scproj" /p:Configuration=%1
-IF ERRORLEVEL 1 GOTO errorHandling
-
-"C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" /t:Build ".\Reactive.Nissan.Content\Nissan.TDS.03.Master.Content.AU\Nissan.TDS.03.Master.Content.AU.scproj" /p:Configuration=%1
-IF ERRORLEVEL 1 GOTO errorHandling
-
-"C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" /t:Build ".\Reactive.Nissan.Content\Nissan.TDS.04.Master.Content.NZ\Nissan.TDS.04.Master.Content.NZ.scproj" /p:Configuration=%1
-IF ERRORLEVEL 1 GOTO errorHandling
-
-REM PACK UPDATE PACKAGES INTO A SINGLE NUPKG ARTIFACT
-.\packages\nuget\nuget.exe pack ".\Reactive.Nissan.Content\Nissan.TDS.Packages.nuspec" -Version %2 -Verbosity detailed -BasePath .\Reactive.Nissan.Content -OutputDirectory .\_Deployment\Packages
-IF ERRORLEVEL 1 GOTO errorHandling
-
 EXIT /b 0
 
 :errorHandling
