@@ -51,6 +51,4 @@ C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\bin\Microsoft.CodeDom.Prov
 C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\obj\Release\test_app.dll
 C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\obj\Release\test_app.pdb
-C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\obj\Release\test_app.csprojAssemblyReference.cache
-C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\obj\Release\test_app.csproj.CoreCompileInputs.cache
-C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\obj\Release\test_app.csproj.CopyComplete
+C:\TeamCity\buildAgent\work\3dc41d59919a64ff\test_app\obj\Release\test_app.csprojResolveAssemblyReference.cache
