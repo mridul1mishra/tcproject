@@ -32,7 +32,6 @@ IF EXIST .\_Deployment\Output RMDIR .\_Deployment\Output\CDS /S /Q
 MKDIR .\_Deployment\Packages
 MKDIR .\_Deployment\Output
 MKDIR .\_Deployment\Output\CAS
-MKDIR .\_Deployment\Output\CAS\bin
 MKDIR .\_Deployment\Output\CDS
 
 "C:\Program Files (x86)\MSBuild\14.0\Bin\MsBuild.exe" /m /t:Rebuild "test_app.sln" /p:Configuration=%1;ContentAuthoringOutputDir=%~dp0\_Deployment\Output\CAS;ContentDeliveryOutputDir=%~dp0\_Deployment\Output\CDS
@@ -41,6 +40,8 @@ IF ERRORLEVEL 1 GOTO errorHandling
 .\packages\nuget\nuget.exe pack ".\test_app\test_app.nuspec" -Version %2 -Verbosity detailed -OutputDirectory .\_Deployment\Packages
 IF ERRORLEVEL 1 GOTO errorHandling
 
+ECHO GIT PUSH
+git push origin
 
 EXIT /b 0
 
